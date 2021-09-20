@@ -153,9 +153,9 @@ int main(void)
 
     	       }
 
-    	       if(flagCalculoDos == 1 && primerNumero >= 0)
+    	       if((flagCalculoDos == 1 && primerNumero >= 0) && (primerNumero - (int)primerNumero) == 0)
     	       {
-    	    	   printf("5.1-El factorial de %.2f es: %d \n",primerNumero, (int)factorialUno);
+    	    	   printf("5.1-El factorial de %.2f es: %.2f \n",primerNumero, factorialUno);
 
     	    	   flagCalculoDos = 0;
     	       }
@@ -176,11 +176,19 @@ int main(void)
     	    		  flagCalculoDos = 0;
     	    	   }
 
+    	    	   if((flagCalculoDos == 1 && primerNumero >= 0) && (primerNumero - (int)primerNumero) != 0)
+    	    	   {
+    	    	      printf("5.1-Error: No es posible sacar el factorial del primer numero.\n");
+    	    	      printf("5.1-Solucion: el numero debe ser natural mayor o igual a 0.\n");
+
+    	    	      flagCalculoDos = 0;
+    	    	   }
+
     	       }
 
-    	       if(flagCalculoTres == 1 && segundoNumero >= 0)
+    	       if((flagCalculoTres == 1 && segundoNumero >= 0) && (segundoNumero - (int)segundoNumero) == 0)
     	       {
-    	    	   printf("5.2-El factorial de %.2f es: %d \n",segundoNumero, (int)factorialDos);
+    	    	   printf("5.2-El factorial de %.2f es: %.2f \n",segundoNumero, factorialDos);
 
     	    	   flagCalculoTres = 0;
     	       }
@@ -200,6 +208,14 @@ int main(void)
     	    		  printf("5.2-Solucion: el numero debe ser positivo.\n");
 
     	    		  flagCalculoTres = 0;
+    	    	   }
+
+    	    	   if((flagCalculoTres == 1 && segundoNumero >= 0) && (segundoNumero - (int)segundoNumero) != 0)
+    	    	   {
+    	    		   printf("5.2-Error: No es posible sacar el factorial del segundo numero.\n");
+    	    		   printf("5.2-Solucion: el numero debe ser natural mayor o igual a 0.\n");
+
+    	    		   flagCalculoTres = 0;
     	    	   }
 
     	       }

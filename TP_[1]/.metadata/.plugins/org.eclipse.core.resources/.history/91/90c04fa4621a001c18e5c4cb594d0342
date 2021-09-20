@@ -57,23 +57,31 @@ int main(void)
     do
     {
     	 printf("Ingrese una opcion: \n");
-         printf("1-Ingresar un numero: \n");
-    	 printf("2-Ingresar otro numero: \n");
-         printf("3-Calcular todas las operaciones: \n");
-    	 printf("4-Mostrar resultados: \n");
-    	 printf("5-Salir: \n");
 
     	 if(flagUno == 1)
     	 {
-    		 printf("-El primer numero ingresado: %.2f\n", primerNumero);
+    		 printf("1-Ingresar un numero:  primer numero = %.2f\n", primerNumero);
+    	 }
+    	 else
+    	 {
+    		 printf("1-Ingresar un numero: \n");
     	 }
 
     	 if(flagDos == 1)
     	 {
-    		 printf("-El segundo numero ingresado: %.2f\n", segundoNumero);
+    		 printf("2-Ingresar un numero:  segundo numero = %.2f\n", segundoNumero);
+
+    	 }
+    	 else
+    	 {
+    		 printf("2-Ingresar otro numero: \n");
     	 }
 
-         fflush(stdin);
+         printf("3-Calcular todas las operaciones: \n");
+    	 printf("4-Mostrar resultados: \n");
+    	 printf("5-Salir: \n");
+
+    	 fflush(stdin);
     	 scanf("%d", &opcion);
 
     	 switch(opcion)
@@ -138,14 +146,14 @@ int main(void)
 
     	       else
     	       {
-    	    	   printf("1-Error: luego del ingreso de los numeros haga las operaciones\n");
-    	    	   printf("2-Error: luego del ingreso de los numeros haga los operaciones\n");
-    	    	   printf("3-Error: luego del ingreso de los numeros haga los operaciones\n");
-    	    	   printf("4-Error: luego del ingreso de los numeros haga los operaciones\n");
+    	    	   printf("1-Error: luego del ingreso de los numeros haga las operaciones.\n");
+    	    	   printf("2-Error: luego del ingreso de los numeros haga las operaciones.\n");
+    	    	   printf("3-Error: luego del ingreso de los numeros haga las operaciones.\n");
+    	    	   printf("4-Error: luego del ingreso de los numeros haga las operaciones.\n");
 
     	       }
 
-    	       if(flagCalculoDos == 1 && primerNumero >= 0)
+    	       if((flagCalculoDos == 1 && primerNumero >= 0) && (primerNumero - (int)primerNumero) == 0)
     	       {
     	    	   printf("5.1-El factorial de %.2f es: %.2f \n",primerNumero, factorialUno);
 
@@ -154,21 +162,31 @@ int main(void)
 
     	       else
     	       {
-    	    	   if(primerNumero < 0 && flagCalculoDos == 1)
-    	    	   {
-    	    		  printf("5.1-Error: no es posible sacar el factorial del primer numero\n");
-    	    		  printf("5.1-Solucion: el numero debe ser positivo\n");
-    	    	   }
-
     	    	   if(flagCalculoDos == 0)
     	    	   {
-    	    		   printf("5.1-Error: no es posible sacar el factorial del primer numero\n");
-    	    		   printf("5.1-Solucion: luego del ingreso del numero haga la operacion\n");
+    	    	       printf("5.1-Error: no es posible sacar el factorial del primer numero.\n");
+    	    	       printf("5.1-Solucion: luego del ingreso del numero haga la operacion.\n");
+    	    	   }
+
+    	    	   if(primerNumero < 0 && flagCalculoDos == 1)
+    	    	   {
+    	    		  printf("5.1-Error: no es posible sacar el factorial del primer numero.\n");
+    	    		  printf("5.1-Solucion: el numero debe ser positivo.\n");
+
+    	    		  flagCalculoDos = 0;
+    	    	   }
+
+    	    	   if((flagCalculoDos == 1 && primerNumero >= 0) && (primerNumero - (int)primerNumero) != 0)
+    	    	   {
+    	    	      printf("5.1-Error: No es posible sacar el factorial del segundo numero.\n");
+    	    	      printf("5.1-Solucion: el numero debe ser natural mayor o igual a 0.\n");
+
+    	    	      flagCalculoDos = 0;
     	    	   }
 
     	       }
 
-    	       if(flagCalculoTres == 1 && segundoNumero >= 0)
+    	       if((flagCalculoTres == 1 && segundoNumero >= 0) && (segundoNumero - (int)segundoNumero) == 0)
     	       {
     	    	   printf("5.2-El factorial de %.2f es: %.2f \n",segundoNumero, factorialDos);
 
@@ -177,21 +195,45 @@ int main(void)
 
     	       else
     	       {
-    	    	  if(segundoNumero < 0)
-    	    	  {
-    	    		 printf("5.2-Error: No es posible sacar el factorial del segundo numero\n");
-    	    		 printf("5.2-Solucion: el numero debe ser positivo\n");
-    	    	  }
 
-    	    	  if(flagCalculoDos == 0)
-    	    	  {
-    	    	      printf("5.2-Error: no es posible sacar el factorial del segundo numero\n");
-    	    	      printf("5.2-Solucion: luego del ingreso del numero haga la operacion\n");
-    	    	  }
+    	    	   if(flagCalculoTres == 0)
+    	    	   {
+    	    	      printf("5.2-Error: no es posible sacar el factorial del segundo numero.\n");
+    	    	      printf("5.2-Solucion: luego del ingreso del numero haga la operacion.\n");
+    	    	   }
+
+    	    	   if(segundoNumero < 0 && flagCalculoTres == 1)
+    	    	   {
+    	    		  printf("5.2-Error: No es posible sacar el factorial del segundo numero.\n");
+    	    		  printf("5.2-Solucion: el numero debe ser positivo.\n");
+
+    	    		  flagCalculoTres = 0;
+    	    	   }
+
+    	    	   if((flagCalculoTres == 1 && segundoNumero >= 0) && (segundoNumero - (int)segundoNumero) != 0)
+    	    	   {
+    	    		   printf("5.2-Error: No es posible sacar el factorial del segundo numero.\n");
+    	    		   printf("5.2-Solucion: el numero debe ser natural mayor o igual a 0.\n");
+
+    	    		   flagCalculoTres = 0;
+    	    	   }
 
     	       }
 
     	       break;
+
+    	       case 5:
+
+    	       printf("5-Gracias por usar mi programa!!\n");
+
+    	       break;
+
+    	       default:
+
+    	       printf("-Error, ingrese una opcion valida: \n");
+
+    	       break;
+
 
     	}
 

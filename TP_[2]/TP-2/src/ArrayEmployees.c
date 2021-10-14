@@ -97,7 +97,16 @@ int modificarEmpleado(Employee lista[], int tam)
 
          if(posicion != -1)
          {
+        	  printf(" _______________________________________________________________________________________________________\n");
+        	  printf("|ID         |NOMBRE               |APELLIDO             |SALARIO           |SECTOR                      |\n");
+        	  printf("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n");
 
+        	  printf("|           |                     |                     |                  |                     \t|\n");
+        	             printf("%5d %22s %25s %18.2f %20d\n\n",    lista[posicion].id,
+        	            		                                    lista[posicion].name,
+																	lista[posicion].lastName,
+																	lista[posicion].salary,
+																	lista[posicion].sector);
 
               printf("1-Modificar nombre. \n");
               printf("2-Modificar apellido. \n");
